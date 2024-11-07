@@ -32,9 +32,9 @@ datAge <- xtabs(~LUNG_CANCER + AGE_GROUP, data=data2A)
 fisher <- fisher.test(datAge)
 print(fisher)
 
-p_age <- ggplot(data2A, aes(x = LUNG_CANCER, fill = AGE_GROUP)) +
+p_age <- ggplot(data2A, aes(x = AGE_GROUP, fill = LUNG_CANCER)) +
         geom_bar(position = "stack") +
-        labs(title = "Bar plot of LC vs AGE", x = "LC", y = "Count") +
+        labs(title = "Bar plot of AGE vs LC", x = "AGE", y = "Count") +
         theme_minimal()
 print(p_age)
 
