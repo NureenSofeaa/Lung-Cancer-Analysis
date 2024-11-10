@@ -42,6 +42,7 @@ print(p_age)
 0 = Male 1 = Female
 
 datGen <- xtabs(~LUNG_CANCER + GENDER, data=data2)
+datGen <- addmargins(datGen)
 print(datGen)
 
 chisq1 <- chisq.test(datGen)
@@ -81,6 +82,7 @@ print(p_gen)
 datSM <- xtabs(~LUNG_CANCER + SMOKING, data=data2)
 dimnames(datSM) <- list("LC" = c("LC = 0", "LC = 1"),
                         "SM" = c("SM = 0", "SM = 1"))
+datSM <- addmargins(datSM)
 print(datSM)
 
 chisq2 <- chisq.test(datSM)
@@ -120,6 +122,7 @@ print(p_sm)
 datYF <- xtabs(~LUNG_CANCER + YELLOW_FINGERS, data=data2)
 dimnames(datYF) <- list("LC" = c("LC = 0", "LC = 1"),
                         "YF" = c("YF = 0", "YF = 1"))
+datYF <- addmargins(datYF)
 print(datYF)
 
 chisq3 <- chisq.test(datYF)
@@ -159,6 +162,7 @@ print(p_yf)
 datAnx <- xtabs(~LUNG_CANCER + ANXIETY, data=data2)
 dimnames(datAnx) <- list("LC" = c("LC = 0", "LC = 1"),
                         "Anx" = c("Anx = 0", "Anx = 1"))
+datAnx <- addmargins(datAnx)
 print(datAnx)
 
 chisq4 <- chisq.test(datAnx)
@@ -198,6 +202,7 @@ print(p_anx)
 datPP <- xtabs(~LUNG_CANCER + PEER_PRESSURE, data=data2)
 dimnames(datPP) <- list("LC" = c("LC = 0", "LC = 1"),
                         "PP" = c("PP = 0", "PP = 1"))
+datPP <- addmargins(datPP)
 print(datPP)
 
 chisq5 <- chisq.test(datPP)
@@ -237,6 +242,7 @@ print(p_peer)
 datCD <- xtabs(~LUNG_CANCER + CHRONIC.DISEASE, data=data2)
 dimnames(datCD) <- list("LC" = c("LC = 0", "LC = 1"),
                         "CD" = c("CD = 0", "CD = 1"))
+datCD <- addmargins(datCD)
 print(datCD)
 
 chisq6 <- chisq.test(datCD)
@@ -276,6 +282,7 @@ print(p_cd)
 datFt <- xtabs(~LUNG_CANCER + FATIGUE, data=data2)
 dimnames(datFt) <- list("LC" = c("LC = 0", "LC = 1"),
                         "Ft" = c("Ft = 0", "Ft = 1"))
+datFt <- addmargins(datFt)
 print(datFt)
 
 chisq7 <- chisq.test(datFt)
@@ -315,6 +322,7 @@ print(p_ft)
 datAll <- xtabs(~LUNG_CANCER + ALLERGY, data=data2)
 dimnames(datAll) <- list("LC" = c("LC = 0", "LC = 1"),
                         "All" = c("All = 0", "All = 1"))
+datAll <- addmargins(datAll)
 print(datAll)
 
 chisq8 <- chisq.test(datAll)
@@ -354,6 +362,7 @@ print(p_all)
 datWH <- xtabs(~LUNG_CANCER + WHEEZING, data=data2)
 dimnames(datWH) <- list("LC" = c("LC = 0", "LC = 1"),
                         "WH" = c("WH = 0", "WH = 1"))
+datWH <- addmargins(datWH)
 print(datWH)
 
 chisq9 <- chisq.test(datWH)
@@ -393,6 +402,7 @@ print(p_wh)
 datACS <- xtabs(~LUNG_CANCER + ALCOHOL.CONSUMING, data=data2)
 dimnames(datACS) <- list("LC" = c("LC = 0", "LC = 1"),
                         "ACS" = c("ACS = 0", "ACS = 1"))
+datACS <- addmargins(datACS)
 print(datACS)
 
 chisq10 <- chisq.test(datACS)
@@ -432,6 +442,7 @@ print(p_acs)
 datCGH <- xtabs(~LUNG_CANCER + COUGHING, data=data2)
 dimnames(datCGH) <- list("LC" = c("LC = 0", "LC = 1"),
                         "CGH" = c("CGH = 0", "CGH = 1"))
+datCGH <- addmargins(datCGH)
 print(datCGH)
 
 chisq11 <- chisq.test(datCGH)
@@ -471,6 +482,7 @@ print(p_cgh)
 datSOB <- xtabs(~LUNG_CANCER + SHORTNESS.OF.BREATH, data=data2)
 dimnames(datSOB) <- list("LC" = c("LC = 0", "LC = 1"),
                         "SOB" = c("SOB = 0", "SOB = 1"))
+datSOB <- addmargins(datSOB)
 print(datSOB)
 
 chisq12 <- chisq.test(datSOB)
@@ -510,6 +522,7 @@ print(p_sob)
 datSWD <- xtabs(~LUNG_CANCER + SWALLOWING.DIFFICULTY, data=data2)
 dimnames(datSWD) <- list("LC" = c("LC = 0", "LC = 1"),
                         "SWD" = c("SWD = 0", "SWD = 1"))
+datSWD <- addmargins(datSWD)
 print(datSWD)
 
 chisq13 <- chisq.test(datSWD)
@@ -549,6 +562,7 @@ print(p_swd)
 datCHP <- xtabs(~LUNG_CANCER + CHEST.PAIN, data=data2)
 dimnames(datCHP) <- list("LC" = c("LC = 0", "LC = 1"),
                         "CHP" = c("CHP = 0", "CHP = 1"))
+datCHP <- addmargins(datCHP)
 print(datCHP)
 
 chisq14 <- chisq.test(datCHP)
