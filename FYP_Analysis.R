@@ -64,6 +64,18 @@ print(ConM)
 efficiency <- sum(diag(ConM))/sum(ConM)
 efficiency
 
+TP <- ConM["Yes", "1"]
+TN <- ConM["No", "0"]
+FP <- ConM["Yes", "0"]
+FN <- ConM["No", "1"]
+
+accuracy <- (TP+TN)/sum(ConM)
+print(accuracy)
+sensitivity <- TP/(TP+FN)
+print(sensitivity)
+precision <- TP/(TP+FP)
+print(precision)
+
 # Odds Ratio
 exp(cbind(OR=coef(logit2),confint(logit2)))
 
