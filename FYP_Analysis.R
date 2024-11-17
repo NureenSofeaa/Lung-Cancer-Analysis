@@ -96,14 +96,30 @@ text(0.09, 0.8, labels = paste("AUC =", round(auc, 3)), col = "red", cex = 0.9)
 
 library(ResourceSelection)
 test$LUNG_CANCER <- as.numeric(as.character(test$LUNG_CANCER))
-hoslem.test(test$LUNG_CANCER, pred)
+HL <- hoslem.test(test$LUNG_CANCER, pred)
+print(HL)
 # A high p-value suggests that the model’s predictions are not significantly different from the observed values.
 # The model fits the data reasonably well in terms of predicting the dependent variable
 # No evidence of poor fit.
+if (HL$"p.value" < 0.05) 
+{
+  cat("Reject the null hypothesis. The model is not a good fit.\n")
+} else {
+  cat("Fail to reject the null hypothesis. The model is a good fit.\n")
+}
 
 # Determine if its a good model (Likelihood Ratio Test)
 library(lmtest)
 null <- glm(LUNG_CANCER~1,data=test, family=binomial)
 full <- glm(LUNG_CANCER~.-AGE-CHEST.PAIN-GENDER-ANXIETY-WHEEZING-SHORTNESS.OF.BREATH, data=test, family=binomial)
-lrtest(null,full)
+LRT < lrtest(null,full)
+print(LRT)
 # P-value < 0.05 indicate that it is a good model
+if (LRT$"Pr(>Chisq)"[2] < 0.05) 
+{
+  cat("Reject the null hypothesis. The full model is significantly better than 
+        the null model.\n")
+} else {
+  cat("Fail to reject the null hypothesis. The null model is sufficient.\n")
+}
+
