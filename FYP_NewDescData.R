@@ -283,7 +283,7 @@ p_cd <- ggplot(df, aes(x = CD, y = Frequency, fill = LC)) +
   theme_minimal()
   theme(aspect.ratio = 1)
 
-## 1st Picture (2x3)
+## 1st Layout (2x3)
 
 library(gridExtra)
 theme_custom <- theme_minimal() +
@@ -560,9 +560,7 @@ p_sob <- ggplot(df, aes(x = SOB, y = Frequency, fill = LC)) +
   theme_minimal()
   theme(aspect.ratio = 1)
 
-## 2nd Picture (2x3)
-
-windows(10,10)
+## 2nd Layout (2x3)
 
 p_ft <- p_ft + theme_custom
 p_all <- p_all + theme_custom
@@ -658,11 +656,21 @@ p_chp <- ggplot(df, aes(x = CHP, y = Frequency, fill = LC)) +
   theme_minimal()
   theme(aspect.ratio = 1)
 
-## 3rd Picture (1x2)
+## 3rd Layout (1x2)
 
-windows(10,10)
-p_swd <- p_swd + theme_custom
-p_chp <- p_chp + theme_custom
+theme_custom2 <- theme_minimal() +
+   theme (
+    plot.title =  element_text(size = 9, face = "bold",hjust = 0.5),
+    axis.title = element_text(size = 8),
+    axis.text = element_text(size = 8),
+    legend.position = "bottom",
+    legend.title = element_text(size = 7),
+    legend.text = element_text(size = 7),
+    theme(aspect.ratio = 1)
+  )
+
+p_swd <- p_swd + theme_custom2
+p_chp <- p_chp + theme_custom2
 
 grid.arrange(p_swd, p_chp, ncol = 2)
 
