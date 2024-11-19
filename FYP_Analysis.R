@@ -86,10 +86,15 @@ exp(cbind(OR=coef(logit2),confint(logit2)))
 #   incorrectly labeling negatives as positives (false positives) at various thresholds.
 
 library(pROC)
+library(ggplot)
 roc_curve <- roc(test$LUNG_CANCER, pred)
-plot(roc_curve, main = "ROC Curve with AUC")
 auc <- auc(roc_curve)
-text(0.09, 0.8, labels = paste("AUC =", round(auc, 3)), col = "red", cex = 0.9)
+plot <- ggroc(roc_curve) + labs(title = "ROC Curve with AUC", x = "TN", y= "FP")+
+        theme_minimal()+
+        theme(aspect.ratio=1)+
+        annotate("text",x=0.25,y=0.8,label=paste("AUC =", round(auc,3)),
+                  color="darkred",size=4)
+print(plot)
 # Higher AUC (closer to 1) indicates better model performance.
 
 ## Hosmer-Lemeshow Goodness of Fit Test: Assess how well the model fits the data.
