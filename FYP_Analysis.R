@@ -86,10 +86,10 @@ exp(cbind(OR=coef(logit2),confint(logit2)))
 #   incorrectly labeling negatives as positives (false positives) at various thresholds.
 
 library(pROC)
-library(ggplot)
+library(ggplot2)
 roc_curve <- roc(test$LUNG_CANCER, pred)
 auc <- auc(roc_curve)
-plot <- ggroc(roc_curve) + labs(title = "ROC Curve with AUC", x = "TN", y= "FP")+
+plot <- ggroc(roc_curve) + labs(title = "ROC Curve with AUC", x = "TP Rate", y= "FP Rate")+
         theme_minimal()+
         theme(aspect.ratio=1)+
         annotate("text",x=0.25,y=0.8,label=paste("AUC =", round(auc,3)),
