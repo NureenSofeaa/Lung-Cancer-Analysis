@@ -150,7 +150,7 @@ p_yf <- ggplot(df, aes(x = YF, y = Frequency, fill = LC)) +
   geom_segment(aes(x = 1.8, xend = 1.8, y = 145, yend = 149), color = "black", size = 0.1) + 
   geom_segment(aes(x = 2.2, xend = 2.2, y = 145, yend = 149), color = "black", size = 0.1) +
 
-  scale_fill_manual(values = c("burlywood", "darkred")) +
+  scale_fill_manual(values = c("darkblue", "darkred")) +
   labs(title = "Bar Plot of LC and YF with P-Values",
        x = "YELLOW FINGERS",
        y = "Frequency") +
@@ -192,7 +192,7 @@ p_anx <- ggplot(df, aes(x = ANX, y = Frequency, fill = LC)) +
   geom_segment(aes(x = 1.8, xend = 1.8, y = 124, yend = 128), color = "black", size = 0.1) + 
   geom_segment(aes(x = 2.2, xend = 2.2, y = 124, yend = 128), color = "black", size = 0.1) +
 
-  scale_fill_manual(values = c("burlywood", "darkred")) +
+  scale_fill_manual(values = c("darkblue", "darkred")) +
   labs(title = "Bar Plot of LC and ANX with P-Values",
        x = "ANXIETY",
        y = "Frequency") +
@@ -234,7 +234,7 @@ p_peer <- ggplot(df, aes(x = PP, y = Frequency, fill = LC)) +
   geom_segment(aes(x = 1.8, xend = 1.8, y = 129, yend = 132), color = "black", size = 0.1) + 
   geom_segment(aes(x = 2.2, xend = 2.2, y = 129, yend = 133), color = "black", size = 0.1) +
 
-  scale_fill_manual(values = c("burlywood", "darkred")) +
+  scale_fill_manual(values = c("darkblue", "darkred")) +
   labs(title = "Bar Plot of LC and PP with P-Values",
        x = "PEER PRESSURE",
        y = "Frequency") +
@@ -276,37 +276,12 @@ p_cd <- ggplot(df, aes(x = CD, y = Frequency, fill = LC)) +
   geom_segment(aes(x = 1.8, xend = 1.8, y = 130, yend = 134), color = "black", size = 0.1) + 
   geom_segment(aes(x = 2.2, xend = 2.2, y = 130, yend = 134), color = "black", size = 0.1) +
 
-  scale_fill_manual(values = c("burlywood", "darkred")) +
+  scale_fill_manual(values = c("darkblue", "darkred")) +
   labs(title = "Bar Plot of LC and CD with P-Values",
        x = "CHRONIC DISEASE",
        y = "Frequency") +
   theme_minimal()
   theme(aspect.ratio = 1)
-
-## 1st Layout (2x3)
-
-library(gridExtra)
-theme_custom <- theme_minimal() +
-  theme(
-    plot.title = element_text(size = 10, face = "bold",hjust = 0.5),
-    axis.title = element_text(size = 8),
-    axis.text = element_text(size = 8),
-    legend.position = "bottom",
-    legend.title = element_text(size = 7),
-    legend.text = element_text(size = 8),
-    theme(aspect.ratio = 1)
-  )
-
-p_gen <- p_gen + theme_custom
-p_sm <- p_sm + theme_custom
-p_yf <- p_yf + theme_custom
-p_anx <- p_anx + theme_custom
-p_peer <- p_peer + theme_custom
-p_cd <- p_cd + theme_custom
-
-grid.arrange(p_gen, p_sm, p_yf, p_anx, p_peer, p_cd, ncol = 3)
-
-
 
 ## FATIGUE
 
@@ -343,7 +318,7 @@ p_ft <- ggplot(df, aes(x = Ft, y = Frequency, fill = LC)) +
   geom_segment(aes(x = 1.8, xend = 1.8, y = 164, yend = 168), color = "black", size = 0.1) + 
   geom_segment(aes(x = 2.2, xend = 2.2, y = 164, yend = 168), color = "black", size = 0.1) +
 
-  scale_fill_manual(values = c("burlywood", "darkred")) +
+  scale_fill_manual(values = c("darkblue", "darkred")) +
   labs(title = "Bar Plot of LC and FT with P-Values",
        x = "FATIGUE",
        y = "Frequency") +
@@ -385,7 +360,7 @@ p_all <- ggplot(df, aes(x = All, y = Frequency, fill = LC)) +
   geom_segment(aes(x = 1.8, xend = 1.8, y = 145, yend = 149), color = "black", size = 0.1) + 
   geom_segment(aes(x = 2.2, xend = 2.2, y = 145, yend = 149), color = "black", size = 0.1) +
 
-  scale_fill_manual(values = c("burlywood", "darkred")) +
+  scale_fill_manual(values = c("darkblue", "darkred")) +
   labs(title = "Bar Plot of LC and All with P-Values",
        x = "ALLERGY",
        y = "Frequency") +
@@ -427,7 +402,7 @@ p_wh <- ggplot(df, aes(x = WH, y = Frequency, fill = LC)) +
   geom_segment(aes(x = 1.8, xend = 1.8, y = 141, yend = 145), color = "black", size = 0.1) + 
   geom_segment(aes(x = 2.2, xend = 2.2, y = 141, yend = 145), color = "black", size = 0.1) +
 
-  scale_fill_manual(values = c("burlywood", "darkred")) +
+  scale_fill_manual(values = c("darkblue", "darkred")) +
   labs(title = "Bar Plot of LC and WH with P-Values",
        x = "WHEEZING",
        y = "Frequency") +
@@ -469,7 +444,7 @@ p_acs <- ggplot(df, aes(x = ACS, y = Frequency, fill = LC)) +
   geom_segment(aes(x = 1.8, xend = 1.8, y = 144, yend = 148), color = "black", size = 0.1) + 
   geom_segment(aes(x = 2.2, xend = 2.2, y = 144, yend = 148), color = "black", size = 0.1) +
 
-  scale_fill_manual(values = c("burlywood", "darkred")) +
+  scale_fill_manual(values = c("darkblue", "darkred")) +
   labs(title = "Bar Plot of LC and ACS with P-Values",
        x = "ALCOHOL CONSUMING",
        y = "Frequency") +
@@ -511,7 +486,7 @@ p_cgh <- ggplot(df, aes(x = CGH, y = Frequency, fill = LC)) +
   geom_segment(aes(x = 1.8, xend = 1.8, y = 148, yend = 152), color = "black", size = 0.1) + 
   geom_segment(aes(x = 2.2, xend = 2.2, y = 148, yend = 152), color = "black", size = 0.1) +
 
-  scale_fill_manual(values = c("burlywood", "darkred")) +
+  scale_fill_manual(values = c("darkblue", "darkred")) +
   labs(title = "Bar Plot of LC and CGH with P-Values",
        x = "COUGHING",
        y = "Frequency") +
@@ -553,24 +528,12 @@ p_sob <- ggplot(df, aes(x = SOB, y = Frequency, fill = LC)) +
   geom_segment(aes(x = 1.8, xend = 1.8, y = 152, yend = 156), color = "black", size = 0.1) + 
   geom_segment(aes(x = 2.2, xend = 2.2, y = 152, yend = 156), color = "black", size = 0.1) +
 
-  scale_fill_manual(values = c("burlywood", "darkred")) +
+  scale_fill_manual(values = c("darkblue", "darkred")) +
   labs(title = "Bar Plot of LC and SOB with P-Values",
        x = "SHORTNESS OF BREATH",
        y = "Frequency") +
   theme_minimal()
   theme(aspect.ratio = 1)
-
-## 2nd Layout (2x3)
-
-p_ft <- p_ft + theme_custom
-p_all <- p_all + theme_custom
-p_wh <- p_wh + theme_custom
-p_acs <- p_acs + theme_custom
-p_cgh <- p_cgh + theme_custom
-p_sob <- p_sob + theme_custom
-
-grid.arrange(p_ft, p_all, p_wh, p_acs, p_cgh, p_sob, ncol = 3)
-
 
 ## SWALLOWING DIFFICULTY
 
@@ -607,7 +570,7 @@ p_swd <- ggplot(df, aes(x = SWD, y = Frequency, fill = LC)) +
   geom_segment(aes(x = 1.8, xend = 1.8, y = 123, yend = 127), color = "black", size = 0.1) + 
   geom_segment(aes(x = 2.2, xend = 2.2, y = 123, yend = 127), color = "black", size = 0.1) +
 
-  scale_fill_manual(values = c("burlywood", "darkred")) +
+  scale_fill_manual(values = c("darkblue", "darkred")) +
   labs(title = "Bar Plot of LC and SWD with P-Values",
        x = "SWALLOWING DIFFICULTY",
        y = "Frequency") +
@@ -649,30 +612,45 @@ p_chp <- ggplot(df, aes(x = CHP, y = Frequency, fill = LC)) +
   geom_segment(aes(x = 1.8, xend = 1.8, y = 141, yend = 145), color = "black", size = 0.1) + 
   geom_segment(aes(x = 2.2, xend = 2.2, y = 141, yend = 145), color = "black", size = 0.1) +
 
-  scale_fill_manual(values = c("burlywood", "darkred")) +
+  scale_fill_manual(values = c("darkblue", "darkred")) +
   labs(title = "Bar Plot of LC and CHP with P-Values",
        x = "CHEST PAIN",
        y = "Frequency") +
   theme_minimal()
   theme(aspect.ratio = 1)
 
-## 3rd Layout (1x2)
 
-theme_custom2 <- theme_minimal() +
-   theme (
-    plot.title =  element_text(size = 9, face = "bold",hjust = 0.5),
+library(gridExtra)
+theme_custom <- theme_minimal() +
+  theme(
+    plot.title = element_text(size = 10, face = "bold",hjust = 0.5),
     axis.title = element_text(size = 8),
     axis.text = element_text(size = 8),
     legend.position = "bottom",
     legend.title = element_text(size = 7),
-    legend.text = element_text(size = 7),
+    legend.text = element_text(size = 8),
     theme(aspect.ratio = 1)
   )
 
-p_swd <- p_swd + theme_custom2
-p_chp <- p_chp + theme_custom2
+p_gen <- p_gen + theme_custom
+p_sm <- p_sm + theme_custom
+p_yf <- p_yf + theme_custom
+p_anx <- p_anx + theme_custom
+p_peer <- p_peer + theme_custom
+p_cd <- p_cd + theme_custom
+p_ft <- p_ft + theme_custom
+p_all <- p_all + theme_custom
+p_wh <- p_wh + theme_custom
+p_acs <- p_acs + theme_custom
+p_cgh <- p_cgh + theme_custom
+p_sob <- p_sob + theme_custom
+p_swd <- p_swd + theme_custom
+p_chp <- p_chp + theme_custom
 
-grid.arrange(p_swd, p_chp, ncol = 2)
+library(patchwork)
+plots <- list(p_gen, p_sm, p_yf, p_anx, p_peer, p_cd, p_ft, p_all, p_wh, p_acs, p_cgh, p_sob,p_swd, p_chp)
+combined_plot <- wrap_plots(plots, ncol = 2, nrow = 7)
+ggsave("Desc_Data.pdf", combined_plot, width = 16, height = 24, device = "pdf")
 
 
 
