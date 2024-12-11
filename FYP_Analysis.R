@@ -53,8 +53,17 @@ logit2 <- glm(LUNG_CANCER~.-AGE-CHEST.PAIN-GENDER-ANXIETY-WHEEZING-SHORTNESS.OF.
 summary(logit2)
 
 # Model Performance Evaluation
+# 1) AIC
 logit$aic
 logit2$aic
+ # 2) BIC
+BIC(logit)
+BIC(logit2)
+# 3) RMSE
+predicted <- predict(logit, type = "response")
+model_rmse <- rmse(actual, predicted)
+predicted2 <- predict(logit2, type = "response")
+model_rmse2 <- rmse(actual, predicted2)
 
 # Confusion Matrix 
 pred <- predict(logit2,newdata=test, type="response")
